@@ -55,21 +55,21 @@
     </div>
     <div class="datepicker-calendar-container">
       <div *ngIf="!yearPicker">
-        <div class="datepicker-calendar-month-section">
-          <i (click)="prevMonth()" class="fill-{{options.color}}">
+        <div class="datepicker-calendar-month-section" class="fill-{{options.color}}">
+          <i (click)="prevMonth()">
             <svg width="190px" height="306px" viewBox="58 0 190 306" version="1.1">
               <g id="keyboard-left-arrow-button" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(58.000000, 0.000000)">
-                <g id="chevron-left" fill-rule="nonzero" class="fill-{{options.color}}">
+                <g id="chevron-left" fill-rule="nonzero">
                   <polygon id="Shape" points="189.35 35.7 153.65 0 0.65 153 153.65 306 189.35 270.3 72.05 153"></polygon>
                 </g>
               </g>
             </svg>
           </i>
           <span class="month-title">{{ options.monthName[currentDate.month()] }}</span>
-          <i (click)="nextMonth()" class="fill-{{options.color}}">
+          <i (click)="nextMonth()" >
             <svg width="190px" height="306px" viewBox="58 0 190 306" version="1.1">
               <g id="keyboard-right-arrow-button" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(58.000000, 0.000000)">
-                <g id="chevron-right" fill-rule="nonzero" class="fill-{{options.color}}">
+                <g id="chevron-right" fill-rule="nonzero">
                   <polygon id="Shape" points="36.35 0 0.65 35.7 117.95 153 0.65 270.3 36.35 306 189.35 153"></polygon>
                 </g>
               </g>
