@@ -84,6 +84,7 @@ export declare class DatePickerComponent implements ControlValueAccessor, OnInit
     selectYear(e: MouseEvent, year: number): void;
     generateYears(): void;
     writeValue(date: DateModel): void;
+    inputChange(event: any): void;
     registerOnChange(fn: any): void;
     registerOnTouched(fn: any): void;
     prevMonth(): void;
