@@ -337,6 +337,10 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
     this.date = date;
   }
 
+  inputChange(event: any): void {
+    console.log(event);
+  }
+
   registerOnChange(fn: any) {
     this.onChangeCallback = fn;
   }
