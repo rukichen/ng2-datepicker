@@ -247,7 +247,13 @@ export var DatePickerComponent = (function () {
     };
     DatePickerComponent.prototype.inputChange = function (event) {
         if (event.match('(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))')) {
+            this.date = Moment(event, 'YYYY-MM-DD');
             this.date.formatted = event;
+            this.onChangeCallback(this.date);
+            console.log('Date changed!');
+        }
+        else {
+            console.log('Date didn\'t changed!');
         }
     };
     DatePickerComponent.prototype.registerOnChange = function (fn) {
