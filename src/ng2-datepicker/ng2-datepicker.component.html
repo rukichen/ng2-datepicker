@@ -88,7 +88,7 @@
         <div class="datepicker-calendar-days-container">
           <span class="day" *ngFor="let d of days; let i = index"
                             (click)="selectDate($event, d.momentObj)"
-                            [ngClass]="{ 'disabled': !d.enabled, 'today label-' + options.color: d.today, 'selected' + options.color: d.selected }"
+                            [ngClass]="{ 'disabled': !d.enabled, 'today label-': d.today, 'selected': d.selected }"
                             [class.red]="options.color === 'red'"
                             [class.green]="options.color === 'green'"
                             [class.blue]="options.color === 'blue'"
