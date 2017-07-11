@@ -30,6 +30,7 @@ export interface IDatePickerOptions {
     todayText?: string;
     clearText?: string;
     color?: string;
+    monthName?: string[];
 }
 export declare class DatePickerOptions {
     autoApply?: boolean;
@@ -44,6 +45,7 @@ export declare class DatePickerOptions {
     todayText?: string;
     clearText?: string;
     color?: string;
+    monthName?: string[];
     constructor(obj?: IDatePickerOptions);
 }
 export interface CalendarDate {

@@ -51,6 +51,7 @@ export interface IDatePickerOptions {
   todayText?: string;
   clearText?: string;
   color?: string;
+  monthName?: string[];
 }
 
 export class DatePickerOptions {
@@ -66,6 +67,7 @@ export class DatePickerOptions {
   todayText?: string;
   clearText?: string;
   color?: string;
+  monthName?: string[];
 
   constructor(obj?: IDatePickerOptions) {
     this.autoApply = (obj && obj.autoApply === true) ? true : false;
@@ -80,6 +82,8 @@ export class DatePickerOptions {
     this.todayText = obj && obj.todayText ? obj.todayText : 'Today';
     this.clearText = obj && obj.clearText ? obj.clearText : 'Clear';
     this.color = obj && obj.color ? obj.color : 'red';
+    this.monthName = obj && (obj.monthName && obj.monthName.length === 12) ? obj.monthName : ['January', 'February', 'March', 'April',
+      'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   }
 }
 
