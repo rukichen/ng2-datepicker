@@ -256,6 +256,7 @@ export var DatePickerComponent = (function () {
                     formatted: date.format(this.options.format),
                     momentObj: date
                 };
+                this.currentDate = date;
                 this.generateCalendar();
                 this.onChangeCallback(this.date);
                 console.log('Date changed!');

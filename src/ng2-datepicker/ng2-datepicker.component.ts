@@ -348,6 +348,7 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
           formatted: date.format(this.options.format),
           momentObj: date
         };
+        this.currentDate = date;
         this.generateCalendar();
         this.onChangeCallback(this.date);
         console.log('Date changed!');
