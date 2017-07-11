@@ -154,6 +154,9 @@ $clr-background-main: #ffffff !important;
       g {
         fill: $clr-primary-red !important;
       }
+      path {
+        fill: $clr-primary-red !important;
+      }
     }
   }
 }
@@ -165,6 +168,9 @@ $clr-background-main: #ffffff !important;
     g {
       fill: $clr-primary-green !important;
       g {
+        fill: $clr-primary-green !important;
+      }
+      path {
         fill: $clr-primary-green !important;
       }
     }
@@ -180,6 +186,9 @@ $clr-background-main: #ffffff !important;
       g {
         fill: $clr-primary-blue !important;
       }
+      path {
+        fill: $clr-primary-blue !important;
+      }
     }
   }
 }
@@ -191,6 +200,9 @@ $clr-background-main: #ffffff !important;
     g {
       fill: $clr-primary-orange !important;
       g {
+        fill: $clr-primary-orange !important;
+      }
+      path {
         fill: $clr-primary-orange !important;
       }
     }
@@ -206,6 +218,9 @@ $clr-background-main: #ffffff !important;
       g {
         fill: $clr-primary-violet !important;
       }
+      path {
+        fill: $clr-primary-violet !important;
+      }
     }
   }
 }
@@ -217,6 +232,9 @@ $clr-background-main: #ffffff !important;
     g {
       fill: $clr-primary-pink !important;
       g {
+        fill: $clr-primary-pink !important;
+      }
+      path {
         fill: $clr-primary-pink !important;
       }
     }
@@ -232,6 +250,9 @@ $clr-background-main: #ffffff !important;
       g {
         fill: $clr-primary-darkgreen !important;
       }
+      path {
+        fill: $clr-primary-darkgreen !important;
+      }
     }
   }
 }
@@ -239,10 +260,12 @@ $clr-background-main: #ffffff !important;
 .fill-darkblue {
   fill: $clr-primary-darkblue !important;
   svg {
-    fill: $clr-primary-darkblue !important;
     g {
       fill: $clr-primary-darkblue !important;
       g {
+        fill: $clr-primary-darkblue !important;
+      }
+      path {
         fill: $clr-primary-darkblue !important;
       }
     }
