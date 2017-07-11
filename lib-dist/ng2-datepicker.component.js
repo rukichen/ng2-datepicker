@@ -259,14 +259,7 @@ export var DatePickerComponent = (function () {
                 this.currentDate = date;
                 this.generateCalendar();
                 this.onChangeCallback(this.date);
-                console.log('Date changed!');
             }
-            else {
-                console.log('Date didn\'t changed!');
-            }
-        }
-        else {
-            console.log('Date didn\'t changed!');
         }
     };
     DatePickerComponent.prototype.registerOnChange = function (fn) {

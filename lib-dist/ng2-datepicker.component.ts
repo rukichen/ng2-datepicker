@@ -351,12 +351,7 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
         this.currentDate = date;
         this.generateCalendar();
         this.onChangeCallback(this.date);
-        console.log('Date changed!');
-      } else {
-        console.log('Date didn\'t changed!');
       }
-    } else {
-      console.log('Date didn\'t changed!');
     }
   }
 
