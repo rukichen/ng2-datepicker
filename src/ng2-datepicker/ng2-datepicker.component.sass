@@ -67,7 +67,6 @@ $red: #fa5252
     .datepicker-calendar-top
       width: 100%
       height: 80px
-      background: $black
       display: inline-block
       position: relative
 
@@ -170,22 +169,17 @@ $red: #fa5252
           align-items: center
           float: left
           font-size: 14px
-          color: #333
           width: calc(100% / 7)
           height: 33px
           text-align: center
           border-radius: 50%
           cursor: pointer
-          background: #FFFFFF
           &:hover:not(.disabled), &.selected
-            background: #222628
             border: 1px solid #366AAB
             border-radius: 4px
             color: #FFFFFF
           &.disabled
             pointer-events: none
-          &.today
-            color: #366AAB
 
       .datepicker-calendar-years-container
         width: 100%
@@ -204,7 +198,6 @@ $red: #fa5252
           border-radius: 50%
           cursor: pointer
           &:hover, &.selected
-            background: #222628
             border: 1px solid #366AAB
             border-radius: 4px
 
@@ -218,7 +211,6 @@ $red: #fa5252
           outline: none
           display: inline-block
           border: 1px solid $blue
-          background: #099268
           color: $white
           margin-right: 5px
           border-radius: 5px
