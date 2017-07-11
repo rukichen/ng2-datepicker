@@ -25,6 +25,7 @@ export var DatePickerOptions = (function () {
         this.selectYearText = obj && obj.selectYearText ? obj.selectYearText : 'Select Year';
         this.todayText = obj && obj.todayText ? obj.todayText : 'Today';
         this.clearText = obj && obj.clearText ? obj.clearText : 'Clear';
+        this.color = obj && obj.color ? obj.color : 'red';
     }
     return DatePickerOptions;
 }());
