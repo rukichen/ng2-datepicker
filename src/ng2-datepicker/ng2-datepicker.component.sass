@@ -1,3 +1,5 @@
+import '../../palette'
+
 $blue: #366AAB
 $black: #000000
 $white: #FFFFFF
@@ -124,7 +126,10 @@ $red: #fa5252
       display: inline-block
       width: 100%
       padding: 10px
-      background: #222628
+      background: #dddddd
+
+      .datepicker-calendar-month-title
+        color: #000
 
       .datepicker-calendar-month-section
         width: 100%
@@ -165,16 +170,18 @@ $red: #fa5252
           align-items: center
           float: left
           font-size: 14px
-          color: #8E8E8E
+          color: #333
           width: calc(100% / 7)
           height: 33px
           text-align: center
           border-radius: 50%
           cursor: pointer
+          background: #FFFFFF
           &:hover:not(.disabled), &.selected
             background: #222628
             border: 1px solid #366AAB
             border-radius: 4px
+            color: #FFFFFF
           &.disabled
             pointer-events: none
           &.today

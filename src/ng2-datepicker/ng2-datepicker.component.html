@@ -40,13 +40,13 @@
     </div>
   </div>
   <div class="datepicker-calendar" *ngIf="opened">
-    <div class="datepicker-calendar-top">
+    <div class="datepicker-calendar-top {{options.color}}">
       <span class="year-title">{{ currentDate.format('YYYY') }}</span>
       <button type="button" (click)="openYearPicker()" *ngIf="!yearPicker">
         {{options.selectYearText}}
       </button>
       <i class="close" (click)="close()">
-        <svg width="350px" height="349px" viewBox="-1 0 350 349" version="1.1">
+        <svg width="350px" height="349px" viewBox="-1 0 350 349" version="1.1" class="fill-{{options.color}}">
           <g id="delete" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <path d="M336.559,68.611 L231.016,174.165 L336.559,279.714 C352.258,295.419 352.258,320.859 336.559,336.564 C328.715,344.408 318.431,348.333 308.152,348.333 C297.856,348.333 287.571,344.414 279.733,336.564 L174.167,231.003 L68.609,336.563 C60.766,344.407 50.481,348.332 40.193,348.332 C29.908,348.332 19.63,344.413 11.78,336.563 C-3.919,320.865 -3.919,295.424 11.78,279.713 L117.32,174.164 L11.774,68.611 C-3.925,52.912 -3.925,27.466 11.774,11.767 C27.47,-3.92 52.901,-3.92 68.603,11.767 L174.166,117.321 L279.721,11.767 C295.426,-3.92 320.86,-3.92 336.553,11.767 C352.258,27.466 352.258,52.912 336.559,68.611 Z" id="Shape" fill="#000000" fill-rule="nonzero"></path>
           </g>
@@ -57,9 +57,9 @@
       <div *ngIf="!yearPicker">
         <div class="datepicker-calendar-month-section">
           <i (click)="prevMonth()">
-            <svg width="190px" height="306px" viewBox="58 0 190 306" version="1.1">
+            <svg width="190px" height="306px" viewBox="58 0 190 306" version="1.1" class="fill-{{options.color}}">
               <g id="keyboard-left-arrow-button" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(58.000000, 0.000000)">
-                <g id="chevron-left" fill-rule="nonzero" fill="#000000">
+                <g id="chevron-left" fill-rule="nonzero" fill="#000000" class="fill-{{options.color}}">
                   <polygon id="Shape" points="189.35 35.7 153.65 0 0.65 153 153.65 306 189.35 270.3 72.05 153"></polygon>
                 </g>
               </g>
@@ -67,7 +67,7 @@
           </i>
           <span class="month-title">{{ options.monthName[currentDate.month()] }}</span>
           <i (click)="nextMonth()">
-            <svg width="190px" height="306px" viewBox="58 0 190 306" version="1.1">
+            <svg width="190px" height="306px" viewBox="58 0 190 306" version="1.1" class="fill-{{options.color}}">
               <g id="keyboard-right-arrow-button" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(58.000000, 0.000000)">
                 <g id="chevron-right" fill-rule="nonzero" fill="#000000">
                   <polygon id="Shape" points="36.35 0 0.65 35.7 117.95 153 0.65 270.3 36.35 306 189.35 153"></polygon>
@@ -88,13 +88,21 @@
         <div class="datepicker-calendar-days-container">
           <span class="day" *ngFor="let d of days; let i = index"
                             (click)="selectDate($event, d.momentObj)"
-                            [ngClass]="{ 'disabled': !d.enabled, 'today': d.today, 'selected': d.selected }">
+                            [ngClass]="{ 'disabled': !d.enabled, 'today label-' + options.color: d.today, 'selected' + options.color: d.selected }"
+                            [class.red]="options.color === 'red'"
+                            [class.green]="options.color === 'green'"
+                            [class.blue]="options.color === 'blue'"
+                            [class.orange]="options.color === 'orange'"
+                            [class.violet]="options.color === 'violet'"
+                            [class.pink]="options.color === 'pink'"
+                            [class.darkgreen]="options.color === 'darkgreen'"
+                            [class.darkblue]="options.color === 'darkblue'">
             {{ d.day }}
           </span>
         </div>
         <div class="datepicker-buttons" *ngIf="!options.autoApply">
-          <button type="button" class="a-button u-is-secondary u-is-small" (click)="clear()">{{options.clearText}}</button>
-          <button type="button" class="a-button u-is-primary u-is-small" (click)="today()">{{options.todayText}}</button>
+          <button type="button" class="a-button u-is-secondary u-is-small button-{{options.color}}" (click)="clear()">{{options.clearText}}</button>
+          <button type="button" class="a-button u-is-primary u-is-small button-{{options.color}}" (click)="today()">{{options.todayText}}</button>
         </div>
       </div>
       <div *ngIf="yearPicker">
