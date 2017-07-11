@@ -339,8 +339,15 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
 
   inputChange(event: string): void {
     if (event.match('(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))')) {
-      this.date = Moment(event, 'YYYY-MM-DD');
-      this.date.formatted = event;
+      const date: moment.Moment = new Moment(event, 'YYYY-MM-DD');
+      this.value = {
+        day: date.format('DD'),
+        month: date.format('MM'),
+        year: date.format('YYYY'),
+        formatted: date.format(this.options.format),
+        momentObj: date
+      };
+      this.generateCalendar();
       this.onChangeCallback(this.date);
       console.log('Date changed!');
     } else {
