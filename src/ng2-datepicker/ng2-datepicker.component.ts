@@ -142,10 +142,10 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit, OnChan
 
   ngOnChanges(event: any) {
     if ('texts' in event) {
-      this.options.clearText = event.texts.clearText;
-      this.options.todayText = event.texts.todayText;
-      this.options.selectYearText = event.texts.selectYearText;
-      this.options.monthName = event.texts.monthName;
+      this.options.clearText = event.texts.currentValue.clearText;
+      this.options.todayText = event.texts.currentValue.todayText;
+      this.options.selectYearText = event.texts.currentValue.selectYearText;
+      this.options.monthName = event.texts.currentValue.monthName;
     }
     console.log(event);
   }
