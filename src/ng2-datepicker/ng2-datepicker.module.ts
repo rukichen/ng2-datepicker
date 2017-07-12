@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { SlimScrollModule } from 'ng2-slimscroll';
 
-import { DatePickerComponent } from './ng2-datepicker.component';
+import { DatePickerComponent, DatePickerTexts } from './ng2-datepicker.component';
 export { DatePickerOptions, DateModel, DatePickerTexts } from './ng2-datepicker.component';
 
 @NgModule({
