@@ -35,8 +35,8 @@
     "url": "https://github.com/jkuri/ng2-datepicker/issues"
   },
   "homepage": "https://github.com/jkuri/ng2-datepicker#readme",
-  "main": "./ng2-datepicker.module.ts",
-  "module": "./ng2-datepicker.module.ts",
+  "main": "./lib-dist/ng2-datepicker.module.ts",
+  "module": "./lib-dist/ng2-datepicker.module.ts",
   "peerDependencies": {
     "@angular/forms": "^4.2.6",
     "@angular/common": "^4.2.6",
