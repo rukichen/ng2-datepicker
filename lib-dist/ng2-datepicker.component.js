@@ -45,6 +45,7 @@ export var DatePickerComponent = (function () {
         this.opened = false;
         this.currentDate = Moment();
         this.options = this.options || {};
+        console.log(this.options.monthName);
         this.days = [];
         this.years = [];
         this.date = new DateModel({
