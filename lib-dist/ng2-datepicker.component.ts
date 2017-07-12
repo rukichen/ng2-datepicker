@@ -54,7 +54,7 @@ export interface IDatePickerOptions {
   monthName?: string[];
 }
 
-export interface IDatePickerTexts {
+/*export interface IDatePickerTexts {
   selectYearText?: string;
   todayText?: string;
   clearText?: string;
@@ -74,7 +74,7 @@ export class DatePickerTexts {
     this.monthName = obj && (obj.monthName && obj.monthName.length === 12) ? obj.monthName : ['January', 'February', 'March', 'April',
       'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   }
-}
+}*/
 
 export class DatePickerOptions {
   autoApply?: boolean;
@@ -134,7 +134,7 @@ export const CALENDAR_VALUE_ACCESSOR: any = {
 })
 export class DatePickerComponent implements ControlValueAccessor, OnInit {
   @Input() options: DatePickerOptions;
-  private _texts: DatePickerTexts;
+//  private _texts: DatePickerTexts;
   @Input() inputEvents: EventEmitter<{ type: string, data: string | DateModel }>;
   @Output() outputEvents: EventEmitter<{ type: string, data: string | DateModel }>;
 
@@ -153,13 +153,13 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
   private onTouchedCallback: () => void = () => { };
   private onChangeCallback: (_: any) => void = () => { };
 
-  @Input() set texts(value: DatePickerTexts) {
+/*  @Input() set texts(value: DatePickerTexts) {
     this.options.todayText = value.todayText;
     this.options.clearText = value.clearText;
     this.options.monthName = value.monthName;
     this.options.selectYearText = value.selectYearText;
     console.log(this.options.monthName);
-  }
+  }*/
 
   constructor( @Inject(ElementRef) public el: ElementRef) {
     this.opened = false;
