@@ -147,7 +147,6 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit, OnChan
       this.options.selectYearText = event.texts.currentValue.selectYearText;
       this.options.monthName = event.texts.currentValue.monthName;
     }
-    console.log(event);
   }
 
   date: DateModel;
