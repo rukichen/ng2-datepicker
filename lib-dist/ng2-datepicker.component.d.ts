@@ -32,6 +32,19 @@ export interface IDatePickerOptions {
     color?: string;
     monthName?: string[];
 }
+export interface IDatePickerTexts {
+    selectYearText?: string;
+    todayText?: string;
+    clearText?: string;
+    monthName?: string[];
+}
+export declare class DatePickerTexts {
+    selectYearText?: string;
+    todayText?: string;
+    clearText?: string;
+    monthName?: string[];
+    constructor(obj?: IDatePickerTexts);
+}
 export declare class DatePickerOptions {
     autoApply?: boolean;
     style?: 'normal' | 'big' | 'bold';
@@ -61,6 +74,7 @@ export declare const CALENDAR_VALUE_ACCESSOR: any;
 export declare class DatePickerComponent implements ControlValueAccessor, OnInit {
     el: ElementRef;
     options: DatePickerOptions;
+    private _texts;
     inputEvents: EventEmitter<{
         type: string;
         data: string | DateModel;
@@ -80,6 +94,7 @@ export declare class DatePickerComponent implements ControlValueAccessor, OnInit
     maxDate: moment.Moment | any;
     private onTouchedCallback;
     private onChangeCallback;
+    texts: DatePickerTexts;
     constructor(el: ElementRef);
     value: DateModel;
     ngOnInit(): void;
