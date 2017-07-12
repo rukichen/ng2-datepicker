@@ -138,7 +138,7 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit, OnChan
   @Input() inputEvents: EventEmitter<{ type: string, data: string | DateModel }>;
   @Output() outputEvents: EventEmitter<{ type: string, data: string | DateModel }>;
 
-  @Input() _texts: DatePickerTexts;
+  @Input() texts: DatePickerTexts;
 
   ngOnChanges(event: any) {
     if ('texts' in event) {

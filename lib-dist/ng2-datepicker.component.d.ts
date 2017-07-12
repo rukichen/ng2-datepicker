@@ -82,7 +82,7 @@ export declare class DatePickerComponent implements ControlValueAccessor, OnInit
         type: string;
         data: string | DateModel;
     }>;
-    _texts: DatePickerTexts;
+    texts: DatePickerTexts;
     ngOnChanges(event: any): void;
     date: DateModel;
     opened: boolean;

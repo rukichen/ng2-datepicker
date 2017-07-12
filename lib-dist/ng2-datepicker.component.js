@@ -345,7 +345,7 @@ export var DatePickerComponent = (function () {
         'options': [{ type: Input },],
         'inputEvents': [{ type: Input },],
         'outputEvents': [{ type: Output },],
-        '_texts': [{ type: Input },],
+        'texts': [{ type: Input },],
     };
     return DatePickerComponent;
 }());
