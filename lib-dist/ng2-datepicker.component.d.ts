@@ -17,6 +17,19 @@ export declare class DateModel {
     momentObj: moment.Moment;
     constructor(obj?: IDateModel);
 }
+export interface IDatePickerTexts {
+    selectYearText?: string;
+    todayText?: string;
+    clearText?: string;
+    monthName?: string[];
+}
+export declare class DatePickerTexts {
+    selectYearText?: string;
+    todayText?: string;
+    clearText?: string;
+    monthName?: string[];
+    constructor(obj?: IDatePickerOptions);
+}
 export interface IDatePickerOptions {
     autoApply?: boolean;
     style?: 'normal' | 'big' | 'bold';
@@ -69,6 +82,7 @@ export declare class DatePickerComponent implements ControlValueAccessor, OnInit
         type: string;
         data: string | DateModel;
     }>;
+    texts: DatePickerTexts;
     date: DateModel;
     opened: boolean;
     currentDate: moment.Moment;

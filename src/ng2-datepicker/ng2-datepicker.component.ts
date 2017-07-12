@@ -38,6 +38,28 @@ export class DateModel {
   }
 }
 
+export interface IDatePickerTexts {
+  selectYearText?: string;
+  todayText?: string;
+  clearText?: string;
+  monthName?: string[];
+}
+
+export class DatePickerTexts {
+  selectYearText?: string;
+  todayText?: string;
+  clearText?: string;
+  monthName?: string[];
+
+  constructor(obj?: IDatePickerOptions) {
+    this.selectYearText = obj && obj.selectYearText ? obj.selectYearText : 'Select Year';
+    this.todayText = obj && obj.todayText ? obj.todayText : 'Today';
+    this.clearText = obj && obj.clearText ? obj.clearText : 'Clear';
+    this.monthName = obj && (obj.monthName && obj.monthName.length === 12) ? obj.monthName : ['January', 'February', 'March', 'April',
+      'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  }
+}
+
 export interface IDatePickerOptions {
   autoApply?: boolean;
   style?: 'normal' | 'big' | 'bold';
@@ -114,6 +136,14 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
   @Input() options: DatePickerOptions;
   @Input() inputEvents: EventEmitter<{ type: string, data: string | DateModel }>;
   @Output() outputEvents: EventEmitter<{ type: string, data: string | DateModel }>;
+
+  @Input() set texts(value: DatePickerTexts) {
+    this.options.clearText = value.clearText;
+    this.options.todayText = value.todayText;
+    this.options.selectYearText = value.selectYearText;
+    this.options.monthName = value.monthName;
+    console.log(value);
+  }
 
   date: DateModel;
 

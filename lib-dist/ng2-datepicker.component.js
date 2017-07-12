@@ -12,6 +12,16 @@ export var DateModel = (function () {
     }
     return DateModel;
 }());
+export var DatePickerTexts = (function () {
+    function DatePickerTexts(obj) {
+        this.selectYearText = obj && obj.selectYearText ? obj.selectYearText : 'Select Year';
+        this.todayText = obj && obj.todayText ? obj.todayText : 'Today';
+        this.clearText = obj && obj.clearText ? obj.clearText : 'Clear';
+        this.monthName = obj && (obj.monthName && obj.monthName.length === 12) ? obj.monthName : ['January', 'February', 'March', 'April',
+            'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    }
+    return DatePickerTexts;
+}());
 export var DatePickerOptions = (function () {
     function DatePickerOptions(obj) {
         this.autoApply = (obj && obj.autoApply === true) ? true : false;
@@ -72,6 +82,17 @@ export var DatePickerComponent = (function () {
             }
         });
     }
+    Object.defineProperty(DatePickerComponent.prototype, "texts", {
+        set: function (value) {
+            this.options.clearText = value.clearText;
+            this.options.todayText = value.todayText;
+            this.options.selectYearText = value.selectYearText;
+            this.options.monthName = value.monthName;
+            console.log(value);
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(DatePickerComponent.prototype, "value", {
         get: function () {
             return this.date;
@@ -326,6 +347,7 @@ export var DatePickerComponent = (function () {
         'options': [{ type: Input },],
         'inputEvents': [{ type: Input },],
         'outputEvents': [{ type: Output },],
+        'texts': [{ type: Input },],
     };
     return DatePickerComponent;
 }());
