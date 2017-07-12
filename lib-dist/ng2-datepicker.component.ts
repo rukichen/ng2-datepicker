@@ -209,7 +209,6 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit, OnChan
 
   ngOnInit() {
     this.options = new DatePickerOptions(this.options);
-    console.log(this.options.monthName);
     this.scrollOptions = {
       barBackground: '#C9C9C9',
       barWidth: '7',
