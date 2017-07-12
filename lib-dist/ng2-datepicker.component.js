@@ -45,7 +45,6 @@ export var DatePickerComponent = (function () {
         this.opened = false;
         this.currentDate = Moment();
         this.options = this.options || {};
-        console.log(this.options.monthName);
         this.days = [];
         this.years = [];
         this.date = new DateModel({
@@ -90,6 +89,7 @@ export var DatePickerComponent = (function () {
     DatePickerComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.options = new DatePickerOptions(this.options);
+        console.log(this.options.monthName);
         this.scrollOptions = {
             barBackground: '#C9C9C9',
             barWidth: '7',

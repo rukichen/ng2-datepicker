@@ -134,7 +134,6 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
     this.opened = false;
     this.currentDate = Moment();
     this.options = this.options || {};
-    console.log(this.options.monthName);
     this.days = [];
     this.years = [];
     this.date = new DateModel({
@@ -176,6 +175,7 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
 
   ngOnInit() {
     this.options = new DatePickerOptions(this.options);
+    console.log(this.options.monthName);
     this.scrollOptions = {
       barBackground: '#C9C9C9',
       barWidth: '7',
