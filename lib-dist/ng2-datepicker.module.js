@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { SlimScrollModule } from 'ng2-slimscroll';
 import { DatePickerComponent } from './ng2-datepicker.component';
 export { DatePickerOptions, DateModel } from './ng2-datepicker.component';
-var DatePickerModule = (function () {
+export var DatePickerModule = (function () {
     function DatePickerModule() {
     }
     DatePickerModule.decorators = [
@@ -28,5 +28,4 @@ var DatePickerModule = (function () {
     DatePickerModule.ctorParameters = function () { return []; };
     return DatePickerModule;
 }());
-export { DatePickerModule };
 //# sourceMappingURL=ng2-datepicker.module.js.map

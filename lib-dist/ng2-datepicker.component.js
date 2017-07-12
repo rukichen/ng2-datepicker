@@ -1,8 +1,8 @@
-import { Component, ElementRef, Inject, forwardRef, Input, Output, EventEmitter, } from '@angular/core';
+import { Component, ElementRef, Inject, forwardRef, Input, Output, EventEmitter } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import * as moment from 'moment';
 var Moment = moment.default || moment;
-var DateModel = (function () {
+export var DateModel = (function () {
     function DateModel(obj) {
         this.day = obj && obj.day ? obj.day : null;
         this.month = obj && obj.month ? obj.month : null;
@@ -12,8 +12,7 @@ var DateModel = (function () {
     }
     return DateModel;
 }());
-export { DateModel };
-var DatePickerOptions = (function () {
+export var DatePickerOptions = (function () {
     function DatePickerOptions(obj) {
         this.autoApply = (obj && obj.autoApply === true) ? true : false;
         this.style = obj && obj.style ? obj.style : 'normal';
@@ -32,13 +31,12 @@ var DatePickerOptions = (function () {
     }
     return DatePickerOptions;
 }());
-export { DatePickerOptions };
 export var CALENDAR_VALUE_ACCESSOR = {
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(function () { return DatePickerComponent; }),
     multi: true
 };
-var DatePickerComponent = (function () {
+export var DatePickerComponent = (function () {
     function DatePickerComponent(el) {
         var _this = this;
         this.el = el;
@@ -331,5 +329,4 @@ var DatePickerComponent = (function () {
     };
     return DatePickerComponent;
 }());
-export { DatePickerComponent };
 //# sourceMappingURL=ng2-datepicker.component.js.map
