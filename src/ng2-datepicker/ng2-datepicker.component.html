@@ -1,9 +1,7 @@
 <div class="datepicker-container u-is-unselectable">
   <div class="datepicker-input-container">
     <input type="text" class="datepicker-input" [ngModel]="date.formatted" (ngModelChange)="inputChange($event)">
-    <div class="datepicker-input-icon" (click)="toggle()">
-      <span _ngcontent-c2="" class="input-group-addon"><span _ngcontent-c2="" class="glyphicon glyphicon-calendar"></span></span>
-    </div>
+    <span _ngcontent-c2="" class="input-group-addon"><span _ngcontent-c2="" class="glyphicon glyphicon-calendar" (click)="toggle()"></span></span>
   </div>
   <div class="datepicker-calendar" *ngIf="opened">
     <div class="datepicker-calendar-top {{options.color}}">
