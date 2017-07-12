@@ -1,4 +1,4 @@
-<div class="datepicker-container u-is-unselectable">
+<div class="u-is-unselectable">
   <div class="input-group">
     <input type="text" class="datepicker-input form-control" [ngModel]="date.formatted" (ngModelChange)="inputChange($event)">
     <span _ngcontent-c2="" class="input-group-addon" (click)="toggle()"><span _ngcontent-c2="" class="glyphicon glyphicon-calendar"></span></span>
@@ -29,7 +29,7 @@
               </g>
             </svg>
           </i>
-          <span class="month-title">{{ options.monthName[currentDate.month()] }}</span>
+          <span class="datepicker-calendar-month-title">{{ options.monthName[currentDate.month()] }}</span>
           <i (click)="nextMonth()" class="fill-{{options.color}}">
             <svg width="190px" height="306px" viewBox="58 0 190 306" version="1.1">
               <g id="keyboard-right-arrow-button" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(58.000000, 0.000000)">
@@ -60,7 +60,15 @@
                             [class.label-violet]="options.color === 'violet' && d.today"
                             [class.label-pink]="options.color === 'pink' && d.today"
                             [class.label-darkgreen]="options.color === 'darkgreen' && d.today"
-                            [class.label-darkblue]="options.color === 'darkblue' && d.today">
+                            [class.label-darkblue]="options.color === 'darkblue' && d.today"
+                            [class.border-red]="options.color === 'red' && d.selected"
+                            [class.border-green]="options.color === 'green' && d.selected"
+                            [class.border-blue]="options.color === 'blue' && d.selected"
+                            [class.border-orange]="options.color === 'orange' && d.selected"
+                            [class.border-violet]="options.color === 'violet' && d.selected"
+                            [class.border-pink]="options.color === 'pink' && d.selected"
+                            [class.border-darkgreen]="options.color === 'darkgreen' && d.selected"
+                            [class.border-darkblue]="options.color === 'darkblue' && d.selected">
             {{ d.day }}
           </span>
         </div>
