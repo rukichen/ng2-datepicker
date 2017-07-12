@@ -82,17 +82,15 @@ export var DatePickerComponent = (function () {
             }
         });
     }
-    Object.defineProperty(DatePickerComponent.prototype, "texts", {
-        set: function (value) {
-            this.options.clearText = value.clearText;
-            this.options.todayText = value.todayText;
-            this.options.selectYearText = value.selectYearText;
-            this.options.monthName = value.monthName;
-            console.log(value);
-        },
-        enumerable: true,
-        configurable: true
-    });
+    DatePickerComponent.prototype.ngOnChanges = function (event) {
+        if ('texts' in event) {
+            this.options.clearText = event.texts.clearText;
+            this.options.todayText = event.texts.todayText;
+            this.options.selectYearText = event.texts.selectYearText;
+            this.options.monthName = event.texts.monthName;
+        }
+        console.log(event);
+    };
     Object.defineProperty(DatePickerComponent.prototype, "value", {
         get: function () {
             return this.date;
@@ -347,7 +345,7 @@ export var DatePickerComponent = (function () {
         'options': [{ type: Input },],
         'inputEvents': [{ type: Input },],
         'outputEvents': [{ type: Output },],
-        'texts': [{ type: Input },],
+        '_texts': [{ type: Input },],
     };
     return DatePickerComponent;
 }());

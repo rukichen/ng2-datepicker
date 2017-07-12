@@ -3,6 +3,7 @@ import {
   ElementRef,
   Inject,
   OnInit,
+  OnChanges,
   forwardRef,
   Input,
   Output,
@@ -132,17 +133,21 @@ export const CALENDAR_VALUE_ACCESSOR: any = {
   styleUrls: ['./ng2-datepicker.component.sass'],
   providers: [CALENDAR_VALUE_ACCESSOR],
 })
-export class DatePickerComponent implements ControlValueAccessor, OnInit {
+export class DatePickerComponent implements ControlValueAccessor, OnInit, OnChanges {
   @Input() options: DatePickerOptions;
   @Input() inputEvents: EventEmitter<{ type: string, data: string | DateModel }>;
   @Output() outputEvents: EventEmitter<{ type: string, data: string | DateModel }>;
 
-  @Input() set texts(value: DatePickerTexts) {
-    this.options.clearText = value.clearText;
-    this.options.todayText = value.todayText;
-    this.options.selectYearText = value.selectYearText;
-    this.options.monthName = value.monthName;
-    console.log(value);
+  @Input() _texts: DatePickerTexts;
+
+  ngOnChanges(event: any) {
+    if ('texts' in event) {
+      this.options.clearText = event.texts.clearText;
+      this.options.todayText = event.texts.todayText;
+      this.options.selectYearText = event.texts.selectYearText;
+      this.options.monthName = event.texts.monthName;
+    }
+    console.log(event);
   }
 
   date: DateModel;

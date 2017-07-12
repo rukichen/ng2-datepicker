@@ -1,4 +1,4 @@
-import { ElementRef, OnInit, EventEmitter } from '@angular/core';
+import { ElementRef, OnInit, OnChanges, EventEmitter } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import { SlimScrollOptions } from 'ng2-slimscroll';
 import * as moment from 'moment';
@@ -71,7 +71,7 @@ export interface CalendarDate {
     momentObj: moment.Moment;
 }
 export declare const CALENDAR_VALUE_ACCESSOR: any;
-export declare class DatePickerComponent implements ControlValueAccessor, OnInit {
+export declare class DatePickerComponent implements ControlValueAccessor, OnInit, OnChanges {
     el: ElementRef;
     options: DatePickerOptions;
     inputEvents: EventEmitter<{
@@ -82,7 +82,8 @@ export declare class DatePickerComponent implements ControlValueAccessor, OnInit
         type: string;
         data: string | DateModel;
     }>;
-    texts: DatePickerTexts;
+    _texts: DatePickerTexts;
+    ngOnChanges(event: any): void;
     date: DateModel;
     opened: boolean;
     currentDate: moment.Moment;
