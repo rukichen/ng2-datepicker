@@ -209,7 +209,6 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit, OnChan
 
   ngOnInit() {
     this.options = new DatePickerOptions(this.options);
-    console.log(this.options.monthName);
     this.scrollOptions = {
       barBackground: '#C9C9C9',
       barWidth: '7',
@@ -289,7 +288,7 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit, OnChan
     let n = 1;
     const firstWeekDay = (this.options.firstWeekdaySunday) ? date.date(2).day() : date.date(1).day();
 
-    if (firstWeekDay !== 1) {
+    if (firstWeekDay !== 0) {
       n -= (firstWeekDay + 6) % 7;
     }
 
@@ -298,7 +297,8 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit, OnChan
     for (let i = n; i <= date.endOf('month').date(); i += 1) {
       const currentDate: moment.Moment = Moment(`${i}.${month + 1}.${year}`, 'DD.MM.YYYY');
       const today: boolean = (Moment().isSame(currentDate, 'day') && Moment().isSame(currentDate, 'month')) ? true : false;
-      const selected: boolean = (selectedDate && selectedDate.isSame(currentDate, 'day')) ? true : false;
+      const selected: boolean = (selectedDate && selectedDate.isSame(currentDate, 'day')
+        && selectedDate.isSame(currentDate, 'month')) ? true : false;
       let betweenMinMax = true;
 
       if (this.minDate !== null) {

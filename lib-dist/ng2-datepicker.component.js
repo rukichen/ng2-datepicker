@@ -107,7 +107,6 @@ export var DatePickerComponent = (function () {
     DatePickerComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.options = new DatePickerOptions(this.options);
-        console.log(this.options.monthName);
         this.scrollOptions = {
             barBackground: '#C9C9C9',
             barWidth: '7',
@@ -191,7 +190,8 @@ export var DatePickerComponent = (function () {
         for (var i = n; i <= date.endOf('month').date(); i += 1) {
             var currentDate = Moment(i + "." + (month + 1) + "." + year, 'DD.MM.YYYY');
             var today = (Moment().isSame(currentDate, 'day') && Moment().isSame(currentDate, 'month')) ? true : false;
-            var selected = (selectedDate && selectedDate.isSame(currentDate, 'day')) ? true : false;
+            var selected = (selectedDate && selectedDate.isSame(currentDate, 'day')
+                && selectedDate.isSame(currentDate, 'month')) ? true : false;
             var betweenMinMax = true;
             if (this.minDate !== null) {
                 if (this.maxDate !== null) {
