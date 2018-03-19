@@ -288,7 +288,7 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit, OnChan
     let n = 1;
     const firstWeekDay = (this.options.firstWeekdaySunday) ? date.date(2).day() : date.date(1).day();
 
-    if (firstWeekDay !== 1) {
+    if (firstWeekDay !== 0) {
       n -= (firstWeekDay + 6) % 7;
     }
 
