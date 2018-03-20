@@ -51,6 +51,14 @@ export class DatePickerTexts {
   todayText?: string;
   clearText?: string;
   monthName?: string[];
+  mo?: string;
+  tu?: string;
+  we?: string;
+  th?: string;
+  fr?: string;
+  sa?: string;
+  su?: string;
+
 
   constructor(obj?: IDatePickerOptions) {
     this.selectYearText = obj && obj.selectYearText ? obj.selectYearText : 'Select Year';
@@ -58,6 +66,13 @@ export class DatePickerTexts {
     this.clearText = obj && obj.clearText ? obj.clearText : 'Clear';
     this.monthName = obj && (obj.monthName && obj.monthName.length === 12) ? obj.monthName : ['January', 'February', 'March', 'April',
       'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    this.mo = obj && obj.mo ? obj.mo : 'M';
+    this.tu = obj && obj.tu ? obj.tu : 'T';
+    this.we = obj && obj.we ? obj.we : 'W';
+    this.th = obj && obj.th ? obj.th : 'T';
+    this.fr = obj && obj.fr ? obj.fr : 'F';
+    this.sa = obj && obj.sa ? obj.sa : 'S';
+    this.su = obj && obj.su ? obj.su : 'S';
   }
 }
 
@@ -75,6 +90,13 @@ export interface IDatePickerOptions {
   clearText?: string;
   color?: string;
   monthName?: string[];
+  mo?: string;
+  tu?: string;
+  we?: string;
+  th?: string;
+  fr?: string;
+  sa?: string;
+  su?: string;
 }
 
 export class DatePickerOptions {
@@ -91,6 +113,13 @@ export class DatePickerOptions {
   clearText?: string;
   color?: string;
   monthName?: string[];
+  mo?: string;
+  tu?: string;
+  we?: string;
+  th?: string;
+  fr?: string;
+  sa?: string;
+  su?: string;
 
   constructor(obj?: IDatePickerOptions) {
     this.autoApply = (obj && obj.autoApply === true) ? true : false;
@@ -107,6 +136,13 @@ export class DatePickerOptions {
     this.color = obj && obj.color ? obj.color : 'red';
     this.monthName = obj && (obj.monthName && obj.monthName.length === 12) ? obj.monthName : ['January', 'February', 'March', 'April',
       'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    this.mo = obj && obj.mo ? obj.mo : 'M';
+    this.tu = obj && obj.tu ? obj.tu : 'T';
+    this.we = obj && obj.we ? obj.we : 'W';
+    this.th = obj && obj.th ? obj.th : 'T';
+    this.fr = obj && obj.fr ? obj.fr : 'F';
+    this.sa = obj && obj.sa ? obj.sa : 'S';
+    this.su = obj && obj.su ? obj.su : 'S';
   }
 }
 

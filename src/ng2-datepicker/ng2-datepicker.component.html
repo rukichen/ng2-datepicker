@@ -34,13 +34,13 @@
           </i>
         </div>
         <div class="datepicker-calendar-day-names">
-          <span>S</span>
-          <span>M</span>
-          <span>T</span>
-          <span>W</span>
-          <span>T</span>
-          <span>F</span>
-          <span>S</span>
+          <span>{{ options.mo }}</span>
+          <span>{{ options.tu }}</span>
+          <span>{{ options.ww }}</span>
+          <span>{{ options.th }}</span>
+          <span>{{ options.fr }}</span>
+          <span>{{ options.sa }}</span>
+          <span>{{ options.so }}</span>
         </div>
         <div class="datepicker-calendar-days-container">
           <span class="day" *ngFor="let d of days; let i = index"
