@@ -182,7 +182,7 @@ export var DatePickerComponent = (function () {
         var year = date.year();
         var n = 1;
         var firstWeekDay = (this.options.firstWeekdaySunday) ? date.date(2).day() : date.date(1).day();
-        if (firstWeekDay !== 1) {
+        if (firstWeekDay !== 0) {
             n -= (firstWeekDay + 6) % 7;
         }
         this.days = [];
