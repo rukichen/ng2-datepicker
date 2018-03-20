@@ -287,11 +287,12 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit, OnChan
     const year = date.year();
     let n = 1;
     const firstWeekDay = (this.options.firstWeekdaySunday) ? date.date(2).day() : date.date(1).day();
-
-    if (firstWeekDay !== 0) {
+    console.log(firstWeekDay);
+    console.log(n);
+    if (firstWeekDay !== 1) {
       n -= (firstWeekDay + 6) % 7;
     }
-
+    console.log(n);
     this.days = [];
     const selectedDate: moment.Moment = this.date.momentObj;
     for (let i = n; i <= date.endOf('month').date(); i += 1) {
