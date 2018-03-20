@@ -19,6 +19,7 @@ export var DatePickerTexts = (function () {
         this.clearText = obj && obj.clearText ? obj.clearText : 'Clear';
         this.monthName = obj && (obj.monthName && obj.monthName.length === 12) ? obj.monthName : ['January', 'February', 'March', 'April',
             'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        console.log(obj);
         this.mo = obj && obj.mo ? obj.mo : 'M';
         this.tu = obj && obj.tu ? obj.tu : 'T';
         this.we = obj && obj.we ? obj.we : 'W';
