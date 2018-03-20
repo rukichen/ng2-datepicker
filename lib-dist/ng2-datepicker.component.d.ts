@@ -22,12 +22,26 @@ export interface IDatePickerTexts {
     todayText?: string;
     clearText?: string;
     monthName?: string[];
+    mo?: string;
+    tu?: string;
+    we?: string;
+    th?: string;
+    fr?: string;
+    sa?: string;
+    su?: string;
 }
 export declare class DatePickerTexts {
     selectYearText?: string;
     todayText?: string;
     clearText?: string;
     monthName?: string[];
+    mo?: string;
+    tu?: string;
+    we?: string;
+    th?: string;
+    fr?: string;
+    sa?: string;
+    su?: string;
     constructor(obj?: IDatePickerOptions);
 }
 export interface IDatePickerOptions {
@@ -44,6 +58,13 @@ export interface IDatePickerOptions {
     clearText?: string;
     color?: string;
     monthName?: string[];
+    mo?: string;
+    tu?: string;
+    we?: string;
+    th?: string;
+    fr?: string;
+    sa?: string;
+    su?: string;
 }
 export declare class DatePickerOptions {
     autoApply?: boolean;
@@ -59,6 +80,13 @@ export declare class DatePickerOptions {
     clearText?: string;
     color?: string;
     monthName?: string[];
+    mo?: string;
+    tu?: string;
+    we?: string;
+    th?: string;
+    fr?: string;
+    sa?: string;
+    su?: string;
     constructor(obj?: IDatePickerOptions);
 }
 export interface CalendarDate {
