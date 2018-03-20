@@ -44,6 +44,13 @@ export interface IDatePickerTexts {
   todayText?: string;
   clearText?: string;
   monthName?: string[];
+  mo?: string;
+  tu?: string;
+  we?: string;
+  th?: string;
+  fr?: string;
+  sa?: string;
+  su?: string;
 }
 
 export class DatePickerTexts {
