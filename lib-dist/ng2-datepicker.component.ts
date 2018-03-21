@@ -74,13 +74,20 @@ export class DatePickerTexts {
     this.monthName = obj && (obj.monthName && obj.monthName.length === 12) ? obj.monthName : ['January', 'February', 'March', 'April',
       'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     console.log(obj);
-    this.mo = obj && obj.mo ? obj.mo : 'M';
+    /*this.mo = obj && obj.mo ? obj.mo : 'M';
     this.tu = obj && obj.tu ? obj.tu : 'T';
     this.we = obj && obj.we ? obj.we : 'W';
     this.th = obj && obj.th ? obj.th : 'T';
     this.fr = obj && obj.fr ? obj.fr : 'F';
     this.sa = obj && obj.sa ? obj.sa : 'S';
-    this.su = obj && obj.su ? obj.su : 'S';
+    this.su = obj && obj.su ? obj.su : 'S';*/
+    this.mo = obj.mo;
+    this.tu = obj.tu;
+    this.we = obj.we;
+    this.th = obj.th;
+    this.fr = obj.fr;
+    this.sa = obj.sa;
+    this.su = obj.su;
     console.log(obj);
   }
 }
