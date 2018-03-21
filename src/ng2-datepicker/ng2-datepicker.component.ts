@@ -81,6 +81,7 @@ export class DatePickerTexts {
     this.fr = obj && obj.fr ? obj.fr : 'F';
     this.sa = obj && obj.sa ? obj.sa : 'S';
     this.su = obj && obj.su ? obj.su : 'S';
+    console.log(obj);
   }
 }
 
