@@ -73,7 +73,6 @@ export class DatePickerTexts {
     this.clearText = obj && obj.clearText ? obj.clearText : 'Clear';
     this.monthName = obj && (obj.monthName && obj.monthName.length === 12) ? obj.monthName : ['January', 'February', 'March', 'April',
       'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    console.log(obj);
     this.mo = obj && obj.mo ? obj.mo : 'M';
     this.tu = obj && obj.tu ? obj.tu : 'T';
     this.we = obj && obj.we ? obj.we : 'W';
@@ -81,7 +80,6 @@ export class DatePickerTexts {
     this.fr = obj && obj.fr ? obj.fr : 'F';
     this.sa = obj && obj.sa ? obj.sa : 'S';
     this.su = obj && obj.su ? obj.su : 'S';
-    console.log(obj);
   }
 }
 
@@ -339,12 +337,9 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit, OnChan
     const year = date.year();
     let n = 1;
     const firstWeekDay = (this.options.firstWeekdaySunday) ? date.date(2).day() : date.date(1).day();
-    console.log(firstWeekDay);
-    console.log(n);
     if (firstWeekDay !== 1) {
       n -= (firstWeekDay + 6) % 7;
     }
-    console.log(n);
     this.days = [];
     const selectedDate: moment.Moment = this.date.momentObj;
     for (let i = n; i <= date.endOf('month').date(); i += 1) {
